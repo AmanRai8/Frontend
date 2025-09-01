@@ -1,10 +1,10 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { HomeIcon } from "lucide-react";
-import { AuthContext } from "../context/AuthContext";
+import { useAuth } from "../context/useAuth";
 
 export default function Header() {
-  const { user, handleLogout } = useContext(AuthContext);
+  const { user, logout } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -56,7 +56,7 @@ export default function Header() {
               />
               <span>{user.userName}</span>
               <button
-                onClick={handleLogout}
+                onClick={logout}
                 className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
               >
                 Logout
@@ -113,7 +113,7 @@ export default function Header() {
                 />
                 <span>{user.userName}</span>
                 <button
-                  onClick={handleLogout}
+                  onClick={logout}
                   className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
                 >
                   Logout
