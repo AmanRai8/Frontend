@@ -4,6 +4,7 @@ import { authApi } from "../service/auth";
 interface User {
   userName: string;
   avatar?: string;
+  role: "admin" | "owner" | "customer"; // role based
 }
 
 interface AuthContextType {
@@ -13,7 +14,6 @@ interface AuthContextType {
   logout: () => void;
 }
 
-// Create context
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({

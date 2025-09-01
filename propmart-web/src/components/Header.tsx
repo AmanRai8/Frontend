@@ -34,6 +34,12 @@ export default function Header() {
           <Link to="/contact" className="hover:text-gray-200">
             Contact
           </Link>
+          {/* Show Dashboard only if user is admin...aaile true xa ankit vai, jasle ni dekhxa yo page aaile, paxi role define garesi true hatai dinu */}
+          {(user?.role === "admin" || true) && (
+            <Link to="/AdminDashboard" className="hover:text-gray-200">
+              Dashboard
+            </Link>
+          )}
         </nav>
 
         {/* Right Side: Register / Profile */}
@@ -94,6 +100,12 @@ export default function Header() {
             <Link to="/contact" className="hover:text-gray-200">
               Contact
             </Link>
+            {/* Show Dashboard only if user is admin */}
+            {(user?.role === "admin" || "true") && (
+              <Link to="/AdminDashboard" className="hover:text-gray-200">
+                Dashboard
+              </Link>
+            )}
 
             {!user && (
               <Link

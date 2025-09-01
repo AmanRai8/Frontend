@@ -9,6 +9,9 @@ import Home from "./pages/Home";
 import RegisterForm from "./pages/RegisterForm";
 import Login from "./pages/Login";
 import Profile from "./components/Profile";
+import AdminDashboard from "./pages/AdminDashboard";
+import About from "./pages/AboutPage";
+import Contact from "./pages/ContactPage";
 // import PropertyForm from "./pages/property/PropertyForm";
 
 const App: React.FC = () => (
@@ -21,6 +24,9 @@ const App: React.FC = () => (
           <Route path="register" element={<RegisterForm />} />
           <Route path="login" element={<Login />} />
           <Route path="property" element={<PropertiesPage />} />
+          <Route path="AdminDashboard" element={<AdminDashboard />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
           {/* <Route path="/profile" element={<Profile />} /> */}
         </Routes>
 
